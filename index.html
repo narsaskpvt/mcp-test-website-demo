@@ -5,34 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCP Test Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <div class="theme-switch">
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-toggle-text">🌞</span>
+        </button>
+    </div>
+    <div class="language-switch">
+        <button id="language-toggle" aria-label="Change language" aria-expanded="false">
+            <span class="current-language">EN</span>
+        </button>
+        <ul class="language-menu" role="menu" hidden>
+            <li role="menuitem"><button data-lang="en" aria-current="true">English</button></li>
+            <li role="menuitem"><button data-lang="es">Español</button></li>
+            <li role="menuitem"><button data-lang="fr">Français</button></li>
+        </ul>
+    </div>
+    <header role="banner">
+        <nav aria-label="Main navigation" role="navigation">
             <h1>MCP Test Website</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul role="menubar">
+                <li role="menuitem"><a href="#home" aria-current="page">Home</a></li>
+                <li role="menuitem"><a href="#about">About</a></li>
+                <li role="menuitem"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to our Demo Site</h2>
+    <main id="main-content" role="main" tabindex="-1">
+        <section id="home" aria-labelledby="home-title">
+            <h2 id="home-title">Welcome to our Demo Site</h2>
             <p>This is a sample website created for testing deployment workflows.</p>
+            <p>Press <kbd>Tab</kbd> to navigate and <kbd>Enter</kbd> to select.</p>
         </section>
-        <section id="about">
-            <h2>About Us</h2>
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">About Us</h2>
             <p>We are a demo project showcasing GitHub workflow capabilities.</p>
+            <ul aria-label="Key features">
+                <li>Accessible design</li>
+                <li>Dark mode support</li>
+                <li>Keyboard navigation</li>
+                <li>Screen reader friendly</li>
+            </ul>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: demo@example.com</p>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact Us</h2>
+            <p>Email: <a href="mailto:demo@example.com" aria-label="Send email to demo@example.com">demo@example.com</a></p>
+            <form role="form" aria-label="Contact form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" aria-label="Send message">Send</button>
+            </form>
         </section>
     </main>
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 MCP Test Website. All rights reserved.</p>
+        <p>Press <kbd>Alt</kbd> + <kbd>A</kbd> for accessibility menu</p>
     </footer>
 </body>
 </html>
