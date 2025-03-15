@@ -7,31 +7,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <header role="banner">
+        <nav aria-label="Main navigation" role="navigation">
             <h1>MCP Test Website</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul role="menubar">
+                <li role="menuitem"><a href="#home" aria-current="page">Home</a></li>
+                <li role="menuitem"><a href="#about">About</a></li>
+                <li role="menuitem"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to our Demo Site</h2>
+    <main id="main-content" role="main">
+        <section id="home" aria-labelledby="home-title">
+            <h2 id="home-title">Welcome to our Demo Site</h2>
             <p>This is a sample website created for testing deployment workflows.</p>
         </section>
-        <section id="about">
-            <h2>About Us</h2>
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">About Us</h2>
             <p>We are a demo project showcasing GitHub workflow capabilities.</p>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: demo@example.com</p>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact Us</h2>
+            <p>Email: <a href="mailto:demo@example.com" aria-label="Send email to demo@example.com">demo@example.com</a></p>
         </section>
     </main>
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2024 MCP Test Website. All rights reserved.</p>
     </footer>
 </body>
