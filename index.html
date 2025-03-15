@@ -3,80 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MCP Test Website - A demo site for testing deployment workflows">
-    <meta name="keywords" content="demo, website, deployment, testing, accessibility">
-    <meta property="og:title" content="MCP Test Website">
-    <meta property="og:description" content="A demo site for testing deployment workflows">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="MCP Test Website">
-    <meta name="twitter:description" content="A demo site for testing deployment workflows">
-    <title>MCP Test Website</title>
+    <title>Welcome to Our Website</title>
+    <meta name="description" content="A modern, accessible website showcasing our services and products">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
+    
     <div class="theme-switch">
-        <button id="theme-toggle" aria-label="Toggle dark mode">
-            <span class="theme-toggle-text">🌞</span>
-        </button>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌜</button>
     </div>
+    
     <div class="language-switch">
-        <button id="language-toggle" aria-label="Change language" aria-expanded="false">
-            <span class="current-language">EN</span>
-        </button>
-        <ul class="language-menu" role="menu" hidden>
-            <li role="menuitem"><button data-lang="en" aria-current="true">English</button></li>
-            <li role="menuitem"><button data-lang="es">Español</button></li>
-            <li role="menuitem"><button data-lang="fr">Français</button></li>
-        </ul>
+        <button id="language-toggle" aria-expanded="false" aria-haspopup="true">EN</button>
+        <div class="language-menu" role="menu" hidden>
+            <button role="menuitem">EN</button>
+            <button role="menuitem">ES</button>
+            <button role="menuitem">FR</button>
+        </div>
     </div>
+
     <header role="banner">
-        <nav aria-label="Main navigation" role="navigation">
-            <h1>MCP Test Website</h1>
-            <ul role="menubar">
-                <li role="menuitem"><a href="#home" aria-current="page">Home</a></li>
-                <li role="menuitem"><a href="#about">About</a></li>
-                <li role="menuitem"><a href="#contact">Contact</a></li>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <section class="hero" aria-label="Welcome section">
+        <img src="images/hero-image.svg" alt="Decorative welcome banner with geometric patterns" width="800" height="400">
+        <div class="hero-content">
+            <h1>Welcome to Our Website</h1>
+            <p>Discover amazing products and services tailored just for you</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
     <main id="main-content" role="main" tabindex="-1">
-        <section id="home" aria-labelledby="home-title">
-            <h2 id="home-title">Welcome to our Demo Site</h2>
-            <p>This is a sample website created for testing deployment workflows.</p>
-            <p>Press <kbd>Tab</kbd> to navigate and <kbd>Enter</kbd> to select.</p>
-        </section>
         <section id="about" aria-labelledby="about-title">
             <h2 id="about-title">About Us</h2>
-            <p>We are a demo project showcasing GitHub workflow capabilities.</p>
-            <ul aria-label="Key features">
-                <li>Accessible design</li>
-                <li>Dark mode support</li>
-                <li>Keyboard navigation</li>
-                <li>Screen reader friendly</li>
-            </ul>
+            <p>We are dedicated to providing the best services and products to our customers. Our team of experts works tirelessly to ensure your satisfaction.</p>
         </section>
+
         <section id="contact" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact Us</h2>
-            <p>Email: <a href="mailto:demo@example.com" aria-label="Send email to demo@example.com">demo@example.com</a></p>
-            <form role="form" aria-label="Contact form">
+            <form id="contact-form" action="#" method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required aria-required="true">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
                 </div>
-                <button type="submit" aria-label="Send message">Send</button>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
+
     <footer role="contentinfo">
-        <p>&copy; 2024 MCP Test Website. All rights reserved.</p>
-        <p>Press <kbd>Alt</kbd> + <kbd>A</kbd> for accessibility menu</p>
+        <p>&copy; 2024 Our Website. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
